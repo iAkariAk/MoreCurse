@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.akari.morecurse.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "morecurse.refmap.json",
+  "mixins": [
+    "ItemStackMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

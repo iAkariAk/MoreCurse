@@ -1,12 +1,9 @@
 package com.akari.morecurse.enchantment;
 
-import com.akari.morecurse.util.EnchantmentUtils;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraftforge.registries.RegistryObject;
-
-import static com.akari.morecurse.MoreCurse.ENCHANTMENTS;
 
 public class UnluckyCurse extends Curse {
     public static final RegistryObject<UnluckyCurse> INSTANCE = registerCurse("unlucky_curse", UnluckyCurse::new);

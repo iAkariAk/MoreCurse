@@ -91,7 +91,7 @@ public abstract class Curse extends Enchantment {
     }
 
     @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack) {
+    public boolean canApplyAtEnchantingTable(@NotNull ItemStack stack) {
         return false;
     }
 }

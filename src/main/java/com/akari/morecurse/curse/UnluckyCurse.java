@@ -1,6 +1,5 @@
 package com.akari.morecurse.curse;
 
-import com.akari.morecurse.util.CurseUtils;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
@@ -29,6 +28,6 @@ public class UnluckyCurse extends Curse {
     }
 
     public static int getLevel(ItemStack itemStack) {
-        return CurseUtils.getLevel(itemStack, INSTANCE.get());
+        return itemStack.getEnchantmentLevel(INSTANCE.get());
     }
 }

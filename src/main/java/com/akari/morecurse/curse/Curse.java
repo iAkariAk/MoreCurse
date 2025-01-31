@@ -39,6 +39,7 @@ public abstract class Curse extends Enchantment {
     @SuppressWarnings("unchecked")
     public static final Lazy<RegistryObject<? extends Curse>[]> CURSES = () -> new RegistryObject[]{
             UnluckyCurse.INSTANCE,
+            ReverentCurse.INSTANCE,
             FragilityCurse.INSTANCE,
             SilverfishCurse.INSTANCE,
             HeavyCurse.INSTANCE

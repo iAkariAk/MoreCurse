@@ -4,6 +4,9 @@ import com.akari.morecurse.curse.Curse;
 import com.akari.morecurse.curse.UnluckyCurse;
 import com.google.common.collect.Streams;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.EnchantedBookItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 
 import java.util.stream.Stream;
 
@@ -14,5 +17,11 @@ public class CurseUtils {
                         Stream.of(player.getMainHandItem(), player.getOffhandItem())
                 ).mapToInt(slop -> slop.getEnchantmentLevel(curse) * UnluckyCurse.getLevelOf(slop))
                 .sum();
+    }
+
+    public static boolean isMoreCurseEnchantedBook(ItemStack itemStack) {
+        return (itemStack.getItem() instanceof EnchantedBookItem)
+                && EnchantmentHelper.getEnchantments(itemStack).keySet().stream()
+                .allMatch(enchantment -> enchantment instanceof Curse);
     }
 }

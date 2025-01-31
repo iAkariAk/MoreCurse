@@ -28,6 +28,6 @@ public class HeavyCurse extends Curse {
         var player = event.player;
         var n = CurseUtils.computeCurseOfArmor(player, INSTANCE.get());
         if (n == 0) return;
-        player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 5, n / 3, false, false, false));
+        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, n / 3, false, false, false));
     }
 }

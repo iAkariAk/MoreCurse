@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "morecurse.refmap.json",
   "mixins": [
+    "CreativeModeTabMixin$ItemDisplayBuilder",
     "ItemStackMixin"
   ],
   "client": [

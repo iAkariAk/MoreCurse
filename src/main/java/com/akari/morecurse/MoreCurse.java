@@ -25,9 +25,8 @@ import org.slf4j.Logger;
 @Mod(MoreCurse.MOD_ID)
 @Mod.EventBusSubscriber
 public class MoreCurse {
-    public static final String MOD_ID = "morecurse";
-
     private static final Logger LOGGER = LogUtils.getLogger();
+    public static final String MOD_ID = "morecurse";
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
     public static final DeferredRegister<Enchantment> ENCHANTMENTS = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
@@ -37,6 +36,7 @@ public class MoreCurse {
                 Curse.BOOK_ITEM_FACTORIES.forEach(factory -> {
                     factory.get().forEach(output::accept);
                 });
+                output.accept(Curse.makeSuperCurseBook());
             })
             .title(Component.translatable("morecurse.title"))
             .build());

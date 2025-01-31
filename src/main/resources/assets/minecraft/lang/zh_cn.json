@@ -1,5 +1,6 @@
 {
   "morecurse.title": "更多诅咒",
+  "morecurse.super_book": "超级书",
   "morecurse.curse.fragility": "脆弱诅咒",
   "morecurse.curse.description.fragility": "您的工具似乎太弱了",
   "morecurse.curse.unlucky": "不幸诅咒",
@@ -10,5 +11,4 @@
   "morecurse.curse.description.heavy": "你感到重力十足。",
   "morecurse.curse.reverse": "倒转之咒",
   "morecurse.curse.description.reverse": "扭转诅咒，献上祝福。\n但是代价是什么？"
-
 }

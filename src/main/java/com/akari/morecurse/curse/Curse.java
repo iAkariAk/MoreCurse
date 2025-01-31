@@ -6,6 +6,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.enchantment.EnchantmentInstance;
@@ -66,6 +67,15 @@ public abstract class Curse extends Enchantment {
 
     public static boolean isPresent() {
         return Arrays.stream(CURSES.get()).allMatch(net.minecraftforge.registries.RegistryObject::isPresent);
+    }
+
+    public static ItemStack makeSuperCurseBook() {
+        var book = new ItemStack(Items.ENCHANTED_BOOK);
+        Arrays.stream(CURSES.get())
+                .map(RegistryObject::get)
+                .forEach(curse -> book.enchant(curse, curse.getMaxLevel()));
+        book.setHoverName(Component.translatable("morecurse.super_book"));
+        return book;
     }
 
     public Optional<Component> getDescription() {

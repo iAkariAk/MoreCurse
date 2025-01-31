@@ -8,6 +8,7 @@
     "ItemStackMixin"
   ],
   "client": [
+    "EnchantmentBookItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,11 +1,12 @@
 package com.akari.morecurse;
 
-import com.akari.morecurse.enchantment.Curse;
+import com.akari.morecurse.curse.Curse;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.common.MinecraftForge;
@@ -27,6 +28,7 @@ public class MoreCurse {
     public static final String MOD_ID = "morecurse";
 
     private static final Logger LOGGER = LogUtils.getLogger();
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
     public static final DeferredRegister<Enchantment> ENCHANTMENTS = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
     public static final RegistryObject<CreativeModeTab> TAB = CREATIVE_MODE_TABS.register("more_curse_tab", () -> CreativeModeTab.builder()
@@ -45,6 +47,7 @@ public class MoreCurse {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         Curse.registerAll();
+        ITEMS.register(modEventBus);
         ENCHANTMENTS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);

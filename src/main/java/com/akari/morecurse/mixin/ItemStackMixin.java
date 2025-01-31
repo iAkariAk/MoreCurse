@@ -1,8 +1,8 @@
 package com.akari.morecurse.mixin;
 
-import com.akari.morecurse.enchantment.Curse;
-import com.akari.morecurse.enchantment.FragilityCurse;
-import com.akari.morecurse.enchantment.UnluckyCurse;
+import com.akari.morecurse.curse.Curse;
+import com.akari.morecurse.curse.FragilityCurse;
+import com.akari.morecurse.curse.UnluckyCurse;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;

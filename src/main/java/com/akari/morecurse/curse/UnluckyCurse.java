@@ -1,4 +1,4 @@
-package com.akari.morecurse.enchantment;
+package com.akari.morecurse.curse;
 
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
@@ -9,12 +9,7 @@ public class UnluckyCurse extends Curse {
     public static final RegistryObject<UnluckyCurse> INSTANCE = registerCurse("unlucky_curse", UnluckyCurse::new);
 
     protected UnluckyCurse() {
-        super(Rarity.COMMON, EnchantmentCategory.VANISHABLE, EquipmentSlot.values());
-    }
-
-    @Override
-    protected String getI18nKey() {
-        return "morecurse.curse.unlucky";
+        super(Rarity.COMMON, EnchantmentCategory.VANISHABLE, EquipmentSlot.values(), "unlucky");
     }
 
     @Override

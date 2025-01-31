@@ -1,5 +1,11 @@
 {
   "morecurse.title": "More Curse",
   "morecurse.curse.fragility": "Fragility Curse",
-  "morecurse.curse.unlucky": "Unlucky Curse"
+  "morecurse.curse.description.fragility": "Your tool seem too weak",
+  "morecurse.curse.unlucky": "Unlucky Curse",
+  "morecurse.curse.description.unlucky": "How unlucky you are!",
+  "morecurse.curse.silverfish": "Silverfish Curse",
+  "morecurse.curse.description.silverfish": "Silverfish think you are extraordinary welcome!",
+  "morecurse.curse.heavy": "Heavy Curse",
+  "morecurse.curse.description.heavy": "You feel courage."
 }

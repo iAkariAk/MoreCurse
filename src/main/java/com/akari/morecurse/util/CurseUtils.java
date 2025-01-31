@@ -11,11 +11,15 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import java.util.stream.Stream;
 
 public class CurseUtils {
+    public static int getLevel(ItemStack itemStack, Curse curse) {
+        return EnchantmentHelper.getEnchantments(itemStack).get(curse);
+    }
+
     public static int computeCurseOfArmor(Player player, Curse curse) {
         return Streams.concat(
                         Streams.stream(player.getArmorSlots()),
                         Stream.of(player.getMainHandItem(), player.getOffhandItem())
-                ).mapToInt(slop -> slop.getEnchantmentLevel(curse) * UnluckyCurse.getLevelOf(slop))
+                ).mapToInt(slop -> slop.getEnchantmentLevel(curse) * (UnluckyCurse.getLevel(slop) + 1))
                 .sum();
     }
 

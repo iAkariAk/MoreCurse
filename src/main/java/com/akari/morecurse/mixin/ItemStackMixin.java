@@ -19,6 +19,9 @@ public abstract class ItemStackMixin {
     @Shadow
     public abstract Item getItem();
 
+    @Shadow
+    public abstract int getMaxDamage();
+
     @Inject(method = "setDamageValue(I)V", at = @At("HEAD"), cancellable = true)
     public void setDamageValue(int target, CallbackInfo ci) {
         var itemStack = (ItemStack) (Object) this;
@@ -26,11 +29,11 @@ public abstract class ItemStackMixin {
         var curse = FragilityCurse.INSTANCE.get();
         var finalDamage = target;
         var level = itemStack.getEnchantmentLevel(curse);
-        var unluckyLevel = UnluckyCurse.getLevelOf(itemStack);
+        var unluckyLevel = UnluckyCurse.getLevel(itemStack);
         if (level > 0) {
             var current = getDamageValue();
             if (current < target) {
-                finalDamage = current + (target - current) * (level + 1) * unluckyLevel;
+                finalDamage = Math.min(getMaxDamage(), current + (target - current) * (level + 1) * unluckyLevel);
             }
         }
         getItem().setDamage(itemStack, finalDamage);

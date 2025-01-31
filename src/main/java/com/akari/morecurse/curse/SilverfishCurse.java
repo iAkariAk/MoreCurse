@@ -17,7 +17,7 @@ import java.util.Random;
 public class SilverfishCurse extends Curse {
     public static final RegistryObject<SilverfishCurse> INSTANCE = registerCurse("silverfish_curse", SilverfishCurse::new);
 
-    protected SilverfishCurse() {
+    private SilverfishCurse() {
         super(Rarity.UNCOMMON, EnchantmentCategory.WEARABLE, EquipmentSlot.values(), "silverfish");
     }
 

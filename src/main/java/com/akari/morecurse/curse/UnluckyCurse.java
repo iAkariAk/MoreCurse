@@ -1,5 +1,6 @@
 package com.akari.morecurse.curse;
 
+import com.akari.morecurse.util.CurseUtils;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
@@ -8,7 +9,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class UnluckyCurse extends Curse {
     public static final RegistryObject<UnluckyCurse> INSTANCE = registerCurse("unlucky_curse", UnluckyCurse::new);
 
-    protected UnluckyCurse() {
+    private UnluckyCurse() {
         super(Rarity.COMMON, EnchantmentCategory.VANISHABLE, EquipmentSlot.values(), "unlucky");
     }
 
@@ -27,7 +28,7 @@ public class UnluckyCurse extends Curse {
         return level; // very low cost
     }
 
-    public static int getLevelOf(ItemStack itemStack) {
-        return itemStack.getEnchantmentLevel(INSTANCE.get());
+    public static int getLevel(ItemStack itemStack) {
+        return CurseUtils.getLevel(itemStack, INSTANCE.get());
     }
 }
